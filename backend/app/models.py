@@ -44,6 +44,9 @@ class User(Base):
 
     documents = relationship("Document", back_populates="owner")
 
+    # Quan hệ: Các công thức yêu thích của người dùng
+    favorites = relationship("UserFavorite", back_populates="user", cascade="all, delete-orphan")
+
 
 class Document(Base):
 
@@ -62,6 +65,8 @@ class Document(Base):
     upload_date = Column(DateTime(timezone=True), server_default=func.now())
 
     status = Column(String(50), default='Pending') # Pending, Processed, Error
+
+    version = Column(Integer, default=1)
 
 
     # Quan hệ ngược lại với User
@@ -102,6 +107,9 @@ class FormulaEntry(Base):
 
     logs = relationship("Log", back_populates="formula", cascade="all, delete-orphan")
 
+    # Quan hệ: Người dùng đã yêu thích công thức này
+    favorited_by = relationship("UserFavorite", back_populates="formula", cascade="all, delete-orphan")
+
 
 class Log(Base):
 
@@ -129,3 +137,16 @@ class Log(Base):
     # Quan hệ ngược lại với FormulaEntry
 
     formula = relationship("FormulaEntry", back_populates="logs")
+
+
+class UserFavorite(Base):
+    __tablename__ = 'user_favorites'
+    
+    favorite_id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    user_id = Column(UUID(as_uuid=True), ForeignKey('users.user_id', ondelete='CASCADE'), nullable=False)
+    formula_id = Column(UUID(as_uuid=True), ForeignKey('formula_entries.id', ondelete='CASCADE'), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+    # Quan hệ
+    user = relationship("User", back_populates="favorites")
+    formula = relationship("FormulaEntry", back_populates="favorited_by")

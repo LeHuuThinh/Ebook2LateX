@@ -1,0 +1,52 @@
+[
+  {
+    "latex_content": "\\sqrt{x^2 + y^2}",
+    "order_index": 1,
+    "raw_image_path": "/images/eq1.png"
+  },
+  {
+    "latex_content": "E = mc^2",
+    "order_index": 2,
+    "raw_image_path": "/images/eq2.png"
+  },
+  {
+    "latex_content": "a^2 + b^2 = c^2",
+    "order_index": 3,
+    "raw_image_path": "/images/eq3.png"
+  },
+  {
+    "latex_content": "\\int_{a}^{b} f(x) dx",
+    "order_index": 4,
+    "raw_image_path": "/images/eq4.png"
+  },
+  {
+    "latex_content": "\\sum_{i=1}^{n} i = \\frac{n(n+1)}{2}",
+    "order_index": 5,
+    "raw_image_path": "/images/eq5.png"
+  },
+  {
+    "latex_content": "\\log_a b = \\frac{\\log_c b}{\\log_c a}",
+    "order_index": 6,
+    "raw_image_path": "/images/eq6.png"
+  },
+  {
+    "latex_content": "e^{i\\pi} + 1 = 0",
+    "order_index": 7,
+    "raw_image_path": "/images/eq7.png"
+  },
+  {
+    "latex_content": "\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1",
+    "order_index": 8,
+    "raw_image_path": "/images/eq8.png"
+  },
+  {
+    "latex_content": "f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}",
+    "order_index": 9,
+    "raw_image_path": "/images/eq9.png"
+  },
+  {
+    "latex_content": "\\frac{d}{dx} e^x = e^x",
+    "order_index": 10,
+    "raw_image_path": "/images/eq10.png"
+  }
+]
