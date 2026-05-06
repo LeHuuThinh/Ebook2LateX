@@ -3,7 +3,7 @@ from logging.config import fileConfig
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
-from models import Base  # Import Base từ file models.py của bạn
+from backend.app.models import Base  # Import Base từ file models.py của bạn
 
 from alembic import context
 
